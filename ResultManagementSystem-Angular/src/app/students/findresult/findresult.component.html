@@ -1,0 +1,23 @@
+<div class="header row container-fluid">
+    <div class="col-sm-11 text-center">
+        <h2>Result Management System</h2>
+    </div>
+    <div class="col-sm-1 mt-2">
+        <button class="px-4 py-1 logout" routerLink="">Logout</button>
+    </div>
+</div>
+<div class="container-fluid col-md-6 p-5 mt-5">
+    <h6>Find result</h6>
+    <form [formGroup]="searchForm" (ngSubmit)="findResult()" ngNativeValidate>
+        <div class="my-3">
+            <label for="rollno" class="form-label "><em>Roll No</em></label>
+            <input type="text" class="form-control" formControlName="rollno" id="rollno" required>
+        </div>
+        <div class="my-3">
+            <label for="name" class="form-label"><em>Date of Birth</em></label>
+            <input type="date" class="form-control" id="dob" formControlName="dob" required>
+        </div>
+        <button type="submit" class="btn btn-primary my-3 px-5"><strong>Search</strong></button>
+        <button type="reset" class="btn my-3 mx-5 px-3"><strong>Clear</strong></button>
+    </form>
+</div>

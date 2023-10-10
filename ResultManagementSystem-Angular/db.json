@@ -1,0 +1,47 @@
+{
+  "teachersignup": [
+    {
+      "userid": "admin",
+      "pwd": "admin",
+      "id": 1
+    },
+    {
+      "userid": "admin1",
+      "pwd": "admin1",
+      "id": 2
+    },
+    {
+      "userid": "ad",
+      "pwd": "ad",
+      "id": 3
+    }
+  ],
+  "studentssignup": [
+    {
+      "userid": "demo",
+      "pwd": "demo",
+      "id": 1
+    },
+    {
+      "userid": "demo1",
+      "pwd": "demo1",
+      "id": 2
+    }
+  ],
+  "records": [
+    {
+      "rollno": "1",
+      "name": "apex ",
+      "dob": "2023-05-08",
+      "score": 90,
+      "id": 1
+    },
+    {
+      "rollno": "4",
+      "name": "sad",
+      "dob": "2023-05-03",
+      "score": 22,
+      "id": 4
+    }
+  ]
+}

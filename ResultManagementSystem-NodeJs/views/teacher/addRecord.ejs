@@ -1,0 +1,28 @@
+<%- include("../partials/navbar.ejs") %> 
+<a href="/teacher/viewall" class="btn btn-primary mx-4 mt-2">Back</a>
+<% if(!user){
+    res.redirect("/teacher/login");
+}%>
+<div class="container-fluid col-md-6 p-5 mt-5">
+    <h6>Add new result</h6>
+    <form method="post">
+        <div class="my-3">
+            <label for="rollno" class="form-label "><em>Roll No</em></label>
+            <input type="text" class="form-control" name="rollno" id="rollno" required>
+        </div>
+        <div class="my-3">
+            <label for="name" class="form-label"><em>Name</em></label>
+            <input type="text" class="form-control" name="name" id="name" required>
+        </div>
+        <div class="my-3">
+            <label for="dob" class="form-label"><em>Date of Birth</em></label>
+            <input type="date" class="form-control" name="dob" required>
+        </div>
+        <div class="my-3">
+            <label for="score" class="form-label"><em>Score</em></label>
+            <input type="number" class="form-control" name="score" required>
+        </div>
+        <button onclick="addRecordValidate(event)" type="submit" class="btn btn-primary my-3 px-5"><strong>Submit</strong></button>
+        <button type="reset" class="btn btn-outline-secondary my-3 mx-5 px-3"><strong>Clear</strong></button>
+    </form>
+</div>

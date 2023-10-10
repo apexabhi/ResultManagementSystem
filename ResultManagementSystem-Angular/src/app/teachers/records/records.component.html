@@ -1,0 +1,88 @@
+<div class="header row container-fluid">
+  <div class="col-sm-11 text-center">
+    <h2>Result Management System</h2>
+  </div>
+  <div class="col-sm-1 mt-2">
+    <a class="px-4 py-1 logout " href="/logout"><strong>Logout</strong></a>
+  </div>
+</div>
+<div class="mt-3 d-flex justify-content-end">
+
+  <a href="/teacher/records/add" class="btn btn-primary mx-3 add"><strong>Add Record</strong></a>
+</div>
+<div>
+  <p class="total mx-5"><strong><u> Total {{recordsData.length}} students</u></strong></p>
+</div>
+
+<div class="container mt-5">
+  <table class="table table-bordered " id="record">
+    <tr>
+      <th><em>Roll No</em></th>
+      <th><em>Name</em></th>
+      <th><em>Date of Birth</em></th>
+      <th><em>Score</em></th>
+      <th><em>Actions</em></th>
+    </tr>
+    <tr *ngFor="let data of recordsData">
+      <th>{{data.rollno}}</th>
+      <th>{{data.name}}</th>
+      <th>{{data.dob}}</th>
+      <th>{{data.score}}</th>
+      <th><button (click)="writeRecord(data)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          class="text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-pencil-fill" viewBox="0 0 16 16">
+            <path
+              d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+          </svg></button>
+        <button (click)="deleteRecord(data)" class="text-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+            height="16" fill="currentColor" class="bi bi-x-octagon-fill" viewBox="0 0 16 16">
+            <path
+              d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+          </svg></button>
+      </th>
+    </tr>
+  </table>
+</div>
+
+
+<!-- Bootstrap Modal for edit form -->
+<div class="modal fade editarea" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><u>Edit Student Record</u></h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editRecordsForm" (ngSubmit)="updateRecord()" ngNativeValidate>
+          <div class="my-3">
+            <label for="rollno" class="form-label " hidden>Roll No</label>
+            <input type="text" class="form-control" formControlName="rollno" id="rollno" hidden>
+          </div>
+          <div class="my-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" id="name" required>
+          </div>
+          <div class="my-3">
+            <label for="dob" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" formControlName="dob" id="dob" required>
+          </div>
+          <div class="my-3">
+            <label for="score" class="form-label">Score</label>
+            <input type="number" class="form-control" formControlName="score" id="score" min="0" max="100" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="closeform" class="btn btn-secondary ebt"
+              data-bs-dismiss="modal"><strong>Close</strong></button>
+            <button type="submit" class="btn btn-primary ebt"><strong>Save changes</strong></button>
+          </div>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>

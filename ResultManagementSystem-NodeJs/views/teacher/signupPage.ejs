@@ -1,0 +1,25 @@
+<h1 class="homeheading">Result Management System</h1>
+<a href="/" class="btn btn-primary mx-4 mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
+  </svg>Back</a>
+<div class="container-fluid col-md-4 p-5 sform">
+    <h4>Register as teacher</h4>
+    <hr>
+    <form method="post" id="teachersignup">
+        <div class="my-3">
+            <label for="email" class="form-label ">E-mail*</label>
+            <input type="email" class="form-control" name="email" id="temail" required>
+        </div>
+        <div class="my-3">
+            <label for="username" class="form-label ">Username*</label>
+            <input type="text" class="form-control" name="username" id="uname" required>
+        </div>
+        <div class="my-3">
+            <label for="password" class="form-label">Password*</label>
+            <input type="password" class="form-control" name="password" id="pwd" required>
+        </div>
+        <button onclick="teacherSignupValidate(event)" type="submit" class="btn btn-primary my-3"><strong>Signup</strong></button>
+        <span><a href="login" class="mx-4"><strong>Existing User?</strong></a></span>
+    </form>
+
+</div>

@@ -1,0 +1,17 @@
+<h1>Result Management System</h1>
+<div class="container-fluid col-md-4 p-5 lform">
+    <h4>Login as teacher</h4>
+    <hr>
+    <form [formGroup]="loginForm" (ngSubmit)="logIn()" ngNativeValidate>
+        <div class="my-3">
+            <label for="userid" class="form-label ">Username*</label>
+            <input type="text" class="form-control" formControlName="userid" id="userid" required>
+        </div>
+        <div class="my-3">
+            <label for="pwd" class="form-label">Password*</label>
+            <input type="password" class="form-control" formControlName="pwd" id="pwd" required>
+        </div>
+        <button type="submit" class="btn btn-primary my-3"><strong>Login</strong></button>
+        <span><a href="/teacher/signup" class="mx-4"><strong> New User?</strong></a></span>
+    </form>
+</div>

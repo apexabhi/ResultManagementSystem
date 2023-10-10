@@ -1,0 +1,25 @@
+.header {
+    margin: 0;
+    background: #c6ecc6;
+    border: 2px solid #8cd98c;
+    padding: 5px;
+}
+
+.logout {
+    background-color: #ffebcc;
+    border: 2px solid #ffcc80;
+    border-radius: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.show {
+    border: 2px solid black;
+    width: 40%;
+    height: 350px;
+    background-color: #d9f2e6;
+}
+
+a {
+    color: black;
+}

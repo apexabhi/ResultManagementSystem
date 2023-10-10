@@ -1,0 +1,19 @@
+<%- include("../partials/navbar.ejs") %> 
+<a href="/" class="btn btn-primary mx-4 mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
+  </svg>Back</a>
+<div class="container-fluid col-md-6 p-5 mt-5">
+    <h6>Find result</h6>
+    <form method="post" action="/student/viewresult" id="studentLoginForm">
+        <div class="my-3">
+            <label for="rollno" class="form-label "><em>Roll No</em></label>
+            <input type="text" class="form-control" name="rollno" id="rollno" required>
+        </div>
+        <div class="my-3">
+            <label for="dob" class="form-label"><em>Date of Birth</em></label>
+            <input type="date" class="form-control" name="dob" required>
+        </div>
+        <button onclick="rollValidate(event)" type="submit" class="btn btn-primary my-3 px-5"><strong>Search</strong></button>
+        <button type="reset" class="btn my-3 mx-5 px-3"><strong>Clear</strong></button>
+    </form>
+</div>
